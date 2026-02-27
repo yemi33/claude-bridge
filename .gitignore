@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+env/.env.local.user
+*.log
+bot-key.pem
+bot-cert.pem
+appPackage/build/
+claude-bridge-app.zip
