@@ -2,12 +2,12 @@
 echo Starting Claude Bridge Gateway...
 echo.
 
-:: Start dev tunnel in background
-echo [1/2] Starting dev tunnel...
-start /B devtunnel host claude-bridge > tunnel.log 2>&1
+:: Start tunnel keep-alive in a separate window
+echo [1/2] Starting dev tunnel (keep-alive)...
+start "Claude Bridge Tunnel" cmd /c tunnel-keep-alive.bat
 
 :: Wait for tunnel to connect
-timeout /t 5 /nobreak > nul
+timeout /t 8 /nobreak > nul
 
 :: Start the server
 echo [2/2] Starting server...
